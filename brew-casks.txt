@@ -1,0 +1,12 @@
+alfred
+app-cleaner
+brave-browser
+discord
+dozer
+firefox
+iterm2
+powershell
+slack
+sublime-text
+visual-studio-code
+vlc

@@ -1,0 +1,49 @@
+1Password 7.app
+Alfred 5.app
+Amphetamine.app
+AnkerWork.app
+App Cleaner 7.app
+Asana.app
+Authy Desktop.app
+BetterSnapTool.app
+Brave Browser.app
+Clocker.app
+Discord.app
+Docker.app
+Dozer.app
+Falcon.app
+Fig.app
+Firefox.app
+Google Chrome.app
+Google Docs.app
+Google Drive.app
+Google Sheets.app
+Google Slides.app
+IntelliJ IDEA CE.app
+JamfAppInstallers
+LM IT Self Service.app
+LockDown Browser OEM.app
+Logitech
+MIB Browser.app
+Microsoft Excel.app
+Microsoft Remote Desktop.app
+NordVPN.app
+Notion.app
+Pages.app
+Postman.app
+PowerShell.app
+Pulse Secure.app
+Safari.app
+Send to Kindle
+Slack.app
+Snagit 2020.app
+Sublime Text.app
+The Unarchiver.app
+Utilities
+VIA.app
+VLC.app
+Visual Studio Code.app
+Wireshark.app
+iMazing Converter.app
+iTerm.app
+zoom.us.app
