@@ -1,7 +1,7 @@
 alfred
-app-cleaner
 brave-browser
 discord
+disk-inventory-x
 dozer
 firefox
 iterm2
@@ -10,3 +10,4 @@ slack
 sublime-text
 visual-studio-code
 vlc
+wireshark

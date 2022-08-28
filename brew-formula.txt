@@ -21,6 +21,7 @@ jemalloc
 krb5
 libev
 libidn2
+liblinear
 libmetalink
 libmpc
 libnghttp2
@@ -29,6 +30,7 @@ libssh2
 libtermkey
 libunistring
 libuv
+lua@5.3
 luajit
 luv
 lz4
@@ -40,6 +42,7 @@ ncurses
 neofetch
 neovim
 nghttp2
+nmap
 node
 nvm
 openjdk
@@ -47,6 +50,7 @@ openjdk@11
 openldap
 openssl@1.1
 openssl@3
+pcre
 pcre2
 pkg-config
 pyenv
