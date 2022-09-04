@@ -7,6 +7,7 @@ Authy Desktop.app
 BetterSnapTool.app
 Brave Browser.app
 Clocker.app
+Cider.app
 Discord.app
 Disk Inventory X.app
 Docker.app
