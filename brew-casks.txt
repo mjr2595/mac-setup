@@ -5,6 +5,8 @@ disk-inventory-x
 dozer
 firefox
 iterm2
+keepingyouawake
+kitty
 powershell
 slack
 sublime-text

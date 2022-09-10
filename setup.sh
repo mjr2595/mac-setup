@@ -12,7 +12,7 @@ xcode-select --install
 
 # configure git
 git config --global user.name mjr2595
-git config --global user.email michaeljohnraymond@gmail.com
+git config --global user.email ****
 git config --global init.defaultbranch main
 
 # create dev folder
