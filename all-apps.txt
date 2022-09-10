@@ -1,5 +1,4 @@
 Alfred 5.app
-Amphetamine.app
 AnkerWork.app
 AppCleaner.app
 Asana.app
@@ -14,6 +13,7 @@ Docker.app
 Dozer.app
 Fig.app
 Firefox.app
+KeepingYouAwake.app
 MIB Browser.app
 Microsoft Excel.app
 Microsoft Remote Desktop.app
@@ -35,4 +35,5 @@ Visual Studio Code.app
 Wireshark.app
 iMazing Converter.app
 iTerm.app
+kitty.app
 zoom.us.app
