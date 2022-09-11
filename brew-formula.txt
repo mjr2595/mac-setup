@@ -16,6 +16,7 @@ groovy
 htop
 hugo
 icu4c
+imagemagick
 isl
 jemalloc
 krb5
