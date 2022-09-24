@@ -5,10 +5,13 @@ disk-inventory-x
 dozer
 firefox
 iterm2
+joplin
 keepingyouawake
 kitty
 powershell
 slack
+spotify
+stats
 sublime-text
 visual-studio-code
 vlc
