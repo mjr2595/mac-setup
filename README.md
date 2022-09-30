@@ -16,6 +16,8 @@ I switch up themes pretty often. Sometimes just based on mood or the season...
 But it's usually between
 
 - [Nord](https://www.nordtheme.com/)
+  - [Firefox Nord Theme](https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPr6_CqlFI4MnOwqZESgRUapmIlv11Yd8Tl3BA9DEpHmaalTe_N-82o2XfpjlEZD9MaHq66xpqUpnZQLgP7FSZDiLkGIoS-wHKdSGZbsH8AhJeOCI-lo-g7ehrIiZKyL0gk2rppTmDPrzfzJp_abHb1ly43cSq8Yc7QZAer4ZLwu90zMJiOO__y_wOA) (requires Firefox Color extension)
+  - [Chrome Nord Theme](https://chrome.google.com/webstore/detail/nord/abehfkkfjlplnjadfcjiflnejblfmmpj)
 - [Dracula](https://draculatheme.com/)
 - Atom One Dark
 
