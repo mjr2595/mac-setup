@@ -1,39 +1,32 @@
 Alfred 5.app
 AnkerWork.app
 AppCleaner.app
-Asana.app
 Authy Desktop.app
 BetterSnapTool.app
 Brave Browser.app
 Clocker.app
-Cider.app
 Discord.app
 Disk Inventory X.app
 Docker.app
 Dozer.app
-Fig.app
 Firefox.app
+iMazing Converter.app
 KeepingYouAwake.app
-MIB Browser.app
-Microsoft Excel.app
+kitty.app
+Logi Bolt.app
+Logi Options+.app
 Microsoft Remote Desktop.app
 NordVPN.app
 Notion.app
-Pages.app
 Postman.app
-PowerShell.app
-Pulse Secure.app
-Safari.app
 Send to Kindle
 Slack.app
 Snagit 2020.app
+Stats.app
 Sublime Text.app
 The Unarchiver.app
 VIA.app
-VLC.app
 Visual Studio Code.app
+VLC.app
 Wireshark.app
-iMazing Converter.app
-iTerm.app
-kitty.app
 zoom.us.app
