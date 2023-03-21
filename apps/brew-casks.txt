@@ -3,15 +3,15 @@ discord
 disk-inventory-x
 dozer
 firefox
+font-jetbrains-mono
 font-sf-mono-nerd-font
+iterm2
 kitty
 notion
-powershell
 raycast
 slack
 spotify
 stats
-sublime-text
 visual-studio-code
 vlc
 wireshark
