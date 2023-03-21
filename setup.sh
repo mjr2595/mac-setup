@@ -10,6 +10,9 @@ xcode-select --install
 
 # setup zsh with Starship
 
+# disable last login terminal prompt
+touch .hushlogin
+
 # configure git
 git config --global user.name mjr2595
 git config --global user.email ****
