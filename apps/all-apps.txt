@@ -1,32 +1,28 @@
-Alfred 5.app
-AnkerWork.app
+1Password.app
 AppCleaner.app
-Authy Desktop.app
-BetterSnapTool.app
+AnkerWork.app
 Brave Browser.app
-Clocker.app
+Cloudflare WARP.app
 Discord.app
 Disk Inventory X.app
 Docker.app
-Dozer.app
 Firefox.app
-iMazing Converter.app
-KeepingYouAwake.app
-kitty.app
-Logi Bolt.app
-Logi Options+.app
+Hidden Bar.app
+IntelliJ IDEA CE.app
+Karabiner-Elements.app
+Karabiner-EventViewer.app
+MIB Browser.app
 Microsoft Remote Desktop.app
-NordVPN.app
 Notion.app
+Numi.app
 Postman.app
-Send to Kindle
+Raycast.app
+Shottr.app
 Slack.app
-Snagit 2020.app
-Stats.app
-Sublime Text.app
-The Unarchiver.app
-VIA.app
+Snagit 2022.app
+Utilities
 Visual Studio Code.app
-VLC.app
+Warp.app
+iTerm.app
 Wireshark.app
 zoom.us.app

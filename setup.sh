@@ -4,9 +4,8 @@ xcode-select --install
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# install homebrew formulae
-
-# install homebrew casks
+# install homebrew stuff, might need to tweak this file first
+brew bundle install --file=./apps/Brewfile
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -15,7 +14,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 
 # setup zsh with Starship
-brew install starship
+# brew install starship
 mkdir ~/.confg/starship.toml
 # copy over starship.toml
 
@@ -31,8 +30,8 @@ git config --global init.defaultbranch main
 mkdir ~/Dev
 
 # Python stuff
-brew update
-brew install pyenv
+# brew update
+# brew install pyenv
 echo 'eval "$(pyenv init --path)"' >> ~/.zshrc # should already be in there
 pyenv install -l
 pyenv install [PYTHON_VERSION]
