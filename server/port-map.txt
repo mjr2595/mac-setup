@@ -4,4 +4,5 @@
 | homeassistant | 8123          |
 | portainer     | 9000          |
 | maybe         | 3000          |
+| cadvisor      | 8080          |
 +---------------+---------------+
