@@ -7,7 +7,7 @@
   "auto_play_study_music": true,
   "music_source": "youtube",
   "study_music_volume": 69,
-  "music_video": ["FYJ7RCDgFwE"],
+  "music_video": ["yOKs5L18YcI"],
   "active_music_video": 0,
   "spotify_playlist": ["0vvXsWCC9xrXsKd4FyS8kM"],
   "active_spotify_playlist": 0,
@@ -24,7 +24,7 @@
   "break_notification_volume": 100,
   "break_notification_sound": "bell",
   "long_break_interval": 4,
-  "tomatillo_theme": "mocha",
+  "tomatillo_theme": "dark",
   "background_image_url": "",
   "time_in_title": false,
   "task_toggle_sound": "click"
