@@ -2,27 +2,23 @@
 AppCleaner.app
 AnkerWork.app
 Brave Browser.app
-Cloudflare WARP.app
+Copilot.app
 Discord.app
 Disk Inventory X.app
 Docker.app
 Firefox.app
+Ghostty.app
+Gimp.app
 Hidden Bar.app
 IntelliJ IDEA CE.app
-Karabiner-Elements.app
-Karabiner-EventViewer.app
 MIB Browser.app
 Microsoft Remote Desktop.app
 Notion.app
-Numi.app
 Postman.app
 Raycast.app
 Shottr.app
 Slack.app
 Snagit 2022.app
-Utilities
 Visual Studio Code.app
-Warp.app
-iTerm.app
 Wireshark.app
 zoom.us.app

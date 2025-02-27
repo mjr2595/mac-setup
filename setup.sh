@@ -12,6 +12,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # omz zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+# install packages via brewfile
+brew bundle --file=./apps/Brewfile-[personal or work]
 
 # setup zsh with Starship
 # brew install starship

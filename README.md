@@ -2,13 +2,21 @@
 
 This repo contains info on all the apps, tools, and settings I use on my Mac
 
-## Config Files
+### Config Files
 
 - [ZSH config](https://gist.github.com/mjr2595/41307eb35513a0cbbd1beb63a9981291)
 - [Ghostty terminal configs](https://gist.github.com/mjr2595/fa5b63f7a1bf7fa2f644b921aa02a318)
 - [Starship prompt config](https://gist.github.com/mjr2595/8a3bd766dc7618bfca5cc8609e9d5753)
 
-## Themes
+### Homebrew
+
+I use Homebrew to keep packages and apps updated and installed on my computer. I typically keep two Brewfiles -- one for personal use and one for work. See [apps](./apps/) for that stuff.
+
+### Utilities
+
+I also have some helpful scripts n things in this repo. Most of these I integrate with Raycast via Script Commands. For more details, see the [utils](./utils/) directory.
+
+### Themes
 
 I switch up themes pretty often. Sometimes just based on mood or the season...
 But it's usually between
@@ -23,7 +31,7 @@ But it's usually between
 - [Catppuccin](https://github.com/catppuccin/catppuccin) =^.^=
 - VS Code Dark Modern
 
-### Theme aggregators
+#### Theme aggregators
 
 - [Slack themes](https://gist.github.com/mjr2595/fa63d054ea08bff1fdd848c355fe89df)
 - [iTerm themes](https://iterm2colorschemes.com/)
