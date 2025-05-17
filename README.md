@@ -18,11 +18,12 @@ I also have some helpful scripts n things in this repo. Most of these I integrat
 
 ### Themes
 
-I switch up themes pretty often. Sometimes just based on mood or the season...
-But it's usually between
+I switch up themes pretty often to help spice things up. Sometimes just based on mood or the season...
+Here's a list of some of my favorites so far:
 
+- [Ayu](https://github.com/ayu-theme) (I like the dark variant)
 - [Gruvbox](https://github.com/morhetz/gruvbox)
-  - [ghostty theme](https://gist.github.com/mjr2595/577258b53b2697087e75a5d4a36f668f)
+  - [Warp term theme](https://gist.github.com/mjr2595/577258b53b2697087e75a5d4a36f668f)
 - [Nord](https://www.nordtheme.com/)
   - [Firefox Nord Theme](https://color.firefox.com/?theme=XQAAAAIPAQAAAAAAAABBKYhm849SCia2CaaEGccwS-xMDPr6_CqlFI4MnOwqZESgRUapmIlv11Yd8Tl3BA9DEpHmaalTe_N-82o2XfpjlEZD9MaHq66xpqUpnZQLgP7FSZDiLkGIoS-wHKdSGZbsH8AhJeOCI-lo-g7ehrIiZKyL0gk2rppTmDPrzfzJp_abHb1ly43cSq8Yc7QZAer4ZLwu90zMJiOO__y_wOA) (requires Firefox Color extension)
   - [Chrome Nord Theme](https://chrome.google.com/webstore/detail/nord/abehfkkfjlplnjadfcjiflnejblfmmpj)

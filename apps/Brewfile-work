@@ -1,7 +1,7 @@
 tap "epk/epk"
 tap "homebrew/bundle"
 brew "btop"
-brew "fileicon"
+# brew "fileicon"
 brew "neovim"
 brew "nvm"
 brew "pandoc"
