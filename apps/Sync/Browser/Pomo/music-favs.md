@@ -6,7 +6,7 @@
 | Coffee Shop Radio                        | [N_7cSl2oq3o](https://www.youtube.com/watch?v=N_7cSl2oq3o) |
 | late night cafe radio                    | [FYJ7RCDgFwE](https://www.youtube.com/watch?v=FYJ7RCDgFwE) |
 | ＣＨＩＬＬ ＰＨＯＮＫ                    | [rp1yVgxPSxw](https://www.youtube.com/watch?v=rp1yVgxPSxw) |
-| TRAPPIN IN ＪＡＰＡＮ                    | [knWY3lBIkVw](https://www.youtube.com/watch?v=knWY3lBIkVw) |
+| TRAPPIN IN ＪＡＰＡＮ                    | [Xhz67qKpmes](https://www.youtube.com/watch?v=Xhz67qKpmes) |
 | Music To Refine To                       | [JRnDYB28bL8](https://www.youtube.com/watch?v=JRnDYB28bL8) |
 | NYC JAZZ RAP                             | [yOKs5L18YcI](https://www.youtube.com/watch?v=yOKs5L18YcI) |
 | chill video game music                   | [JJis0sld2cM](https://www.youtube.com/watch?v=JJis0sld2cM) |
