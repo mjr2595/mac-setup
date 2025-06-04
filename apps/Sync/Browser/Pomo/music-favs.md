@@ -15,3 +15,4 @@
 | 90s SOUL HIPHOP BOOMBAP                  | [Oimuq0kzSC8](https://www.youtube.com/watch?v=Oimuq0kzSC8) |
 | Acid Jazz & Grooves Radio                | [wvt3H0X6Vzs](https://www.youtube.com/watch?v=wvt3H0X6Vzs) |
 | ADHD Intense Relief 90s Hip-Hop Mix      | [gWdV17aBFeM](https://www.youtube.com/watch?v=gWdV17aBFeM) |
+| Hey Arnold Style Jazz                    | [BNA9_h86frQ](https://www.youtube.com/watch?v=BNA9_h86frQ) |
