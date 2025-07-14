@@ -1,0 +1,38 @@
+###### LOOK N FEEL ######
+
+font-family = "SFMono Nerd Font"
+font-size = 18
+
+theme = dark:ayu,light:ayu_light
+background = 0B0E14
+
+cursor-style = block
+cursor-click-to-move = true
+
+initial-window = false
+window-save-state = never
+window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 5
+window-colorspace = display-p3
+window-height = 45
+window-width = 120
+background-opacity = 0.85
+background-blur = true
+
+
+###### OS STUFF ######
+
+shell-integration-features = no-cursor
+macos-titlebar-style = hidden
+
+
+###### QUICK TERMINAL ######
+
+quick-terminal-animation-duration = 0
+quick-terminal-position = bottom
+
+
+###### KEYBINDINGS ######
+
+keybind = global:shift+ctrl+opt+cmd+t=toggle_quick_terminal
