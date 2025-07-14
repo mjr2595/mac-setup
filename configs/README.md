@@ -13,10 +13,15 @@ configs/
 ├── starship/
 │   └── .config/
 │       └── starship.toml
-└── ghostty/
+├── ghostty/
+│   └── .config/
+│       └── ghostty/
+│           └── config
+└── zed/
     └── .config/
-        └── ghostty/
-            └── config
+        └── zed/
+            ├── settings.json
+            └── keymap.json
 ```
 
 ## Setup Steps
@@ -76,7 +81,6 @@ Check that the symlinks were created correctly:
 ls -l ~/.zshrc
 ls -l ~/.config/starship.toml
 ls -l ~/.config/ghostty/config
-ls -l ~/.config | grep zed
 ls -l ~/.config/zed
 ```
 
