@@ -4,10 +4,7 @@ This repo contains info on all the apps, tools, and settings I use on my Mac
 
 ### Config Files
 
-- [ZSH config](https://gist.github.com/mjr2595/41307eb35513a0cbbd1beb63a9981291)
-- [Ghostty terminal configs](https://gist.github.com/mjr2595/fa5b63f7a1bf7fa2f644b921aa02a318)
-- [Starship prompt config](https://gist.github.com/mjr2595/8a3bd766dc7618bfca5cc8609e9d5753)
-- [Zed](https://gist.github.com/mjr2595/4e73880927a47e4f8349b70ebb2603ab)
+Config files are organized by application and managed using [GNU Stow](https://www.gnu.org/software/stow/). See the [configs](./configs/) readme for more deets.
 
 ### Homebrew
 
