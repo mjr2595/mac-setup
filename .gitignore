@@ -3,3 +3,6 @@
 .venv
 plist-to-json/text_replacements.*
 workspace.json
+
+configs/zed/.config/zed/conversations
+configs/zed/.config/zed/prompts
