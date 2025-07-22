@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Minimal",
+  "interfaceFontFamily": "",
+  "baseFontSize": 17,
+  "monospaceFontFamily": "SFMono Nerd Font",
+  "nativeMenus": true,
+  "textFontFamily": "SFMono Nerd Font",
+  "accentColor": "#59c2ff",
+  "showRibbon": true
+}

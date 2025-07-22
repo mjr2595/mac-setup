@@ -2,3 +2,4 @@
 
 .venv
 plist-to-json/text_replacements.*
+workspace.json

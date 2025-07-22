@@ -10,7 +10,8 @@
     "context": "Workspace",
     "bindings": {
       "cmd-shift-g": "git_panel::ToggleFocus",
-      "cmd-shift-alt-ctrl-g": "git::Blame"
+      "cmd-shift-alt-ctrl-g": "git::Blame",
+      "cmd-shift-alt-ctrl-r": "editor::Rename"
     }
   },
   {
