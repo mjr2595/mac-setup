@@ -9,28 +9,38 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # omz zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+# disable last login terminal prompt
+touch .hushlogin
+
 # install packages via brewfile
 brew bundle --file=./apps/Brewfile-[personal or work]
 
-# setup zsh with Starship
-# brew install starship
-mkdir ~/.confg/starship.toml
-# copy over starship.toml
+# create dev and notes dirs
+mkdir ~/Dev
+mkdir ~/Documents/Notes
 
-# disable last login terminal prompt
-touch .hushlogin
+# set up config dirs
+cd ~/mac-setup/configs
+stow -t ~ zsh
+stow -t ~ starship
+stow -t ~ ghostty
+stow -t ~ zed
+stow -t ~ obsidian
+
+# verify symlinks
+ls -l ~/.zshrc
+ls -l ~/.config/starship.toml
+ls -l ~/.config/ghostty/config
+ls -l ~/.config/zed
+ls -l ~/Documents/Notes
 
 # configure git
 git config --global user.name mjr2595
 git config --global user.email ****
 git config --global init.defaultbranch main
-
-# create dev folder
-mkdir ~/Dev
+# optionally set up work gitconfig
 
 # Python stuff
-# brew update
-# brew install pyenv
 echo 'eval "$(pyenv init --path)"' >> ~/.zshrc # should already be in there
 pyenv install -l
 pyenv install [PYTHON_VERSION]
