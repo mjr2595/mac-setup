@@ -3,7 +3,7 @@
   "interfaceFontFamily": "",
   "baseFontSize": 17,
   "monospaceFontFamily": "SFMono Nerd Font",
-  "nativeMenus": true,
+  "nativeMenus": false,
   "textFontFamily": "SFMono Nerd Font",
   "accentColor": "#59c2ff",
   "showRibbon": true
