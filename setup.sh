@@ -57,3 +57,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Neovim (~/.local/share/nvim/site/autoload)
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Non-package manager apps
+# Copilot.app -- for money stuff
