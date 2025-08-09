@@ -4,7 +4,10 @@ font-family = "SFMono Nerd Font"
 font-size = 18
 
 theme = dark:ayu,light:ayu_light
+
 background = 0B0E14
+background-opacity = 0.85
+background-blur = true
 
 cursor-style = block
 cursor-click-to-move = true
@@ -14,11 +17,8 @@ window-save-state = never
 window-padding-balance = true
 window-padding-x = 10
 window-padding-y = 5
-window-colorspace = display-p3
 window-height = 45
 window-width = 120
-background-opacity = 0.85
-background-blur = true
 
 
 ###### OS STUFF ######
