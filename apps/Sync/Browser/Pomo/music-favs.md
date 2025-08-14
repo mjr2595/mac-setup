@@ -1,6 +1,6 @@
 | Title                                    | Link                                                       |
 | ---------------------------------------- | ---------------------------------------------------------- |
-| Chillhop Essentials Spring Radio         | [h2GQcwQRoWg](https://www.youtube.com/watch?v=h2GQcwQRoWg) |
+| Daily Funk Radio                         | [i3YTZAPR8U](https://www.youtube.com/watch?v=-i3YTZAPR8U)  |
 | Chillhop Radio                           | [5yx6BWlEVcY](https://www.youtube.com/watch?v=5yx6BWlEVcY) |
 | lofi hip hop radio                       | [rPjez8z61rI](https://www.youtube.com/watch?v=rPjez8z61rI) |
 | Coffee Shop Radio                        | [N_7cSl2oq3o](https://www.youtube.com/watch?v=N_7cSl2oq3o) |

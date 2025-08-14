@@ -8,7 +8,7 @@
 # Optional parameters:
 # @raycast.icon 🔀
 
-# File path
+# Path to music favorites file
 FILE=~/mac-setup/apps/Sync/Browser/Pomo/music-favs.md
 
 # Check if file exists
@@ -17,25 +17,33 @@ if [[ ! -f "$FILE" ]]; then
     exit 1
 fi
 
-# Extract text inside brackets and store in an array
-items=()
-while IFS= read -r line; do
-    while [[ "$line" =~ \[([^]]+)\] ]]; do
-        items+=("${BASH_REMATCH[1]}")
-        line=${line#*]}
-    done
+# Read lines and extract title and bracket value
+titles=()
+ids=()
+while IFS='|' read -r _ title link _; do
+    # Skip header lines
+    [[ "$title" =~ Title ]] && continue
+    [[ "$title" =~ -+ ]] && continue
+    # Trim whitespace
+    title=$(echo "$title" | xargs)
+    # Extract bracket value
+    if [[ "$link" =~ \[([^\]]+)\] ]]; then
+        ids+=("${BASH_REMATCH[1]}")
+        titles+=("$title")
+    fi
 done < "$FILE"
 
 # Check if array is empty
-if [[ ${#items[@]} -eq 0 ]]; then
+if [[ ${#ids[@]} -eq 0 ]]; then
     echo "No items found in brackets."
     exit 1
 fi
 
-# Pick a random item
-random_item=${items[RANDOM % ${#items[@]}]}
+# Pick a random index
+idx=$((RANDOM % ${#ids[@]}))
 
-# Copy to clipboard
-echo -n "$random_item" | pbcopy
+# Copy bracket value to clipboard
+echo -n "${ids[$idx]}" | pbcopy
 
-echo "Copied to clipboard: $random_item"
+# Output the name
+echo "Let's jam to ${titles[$idx]}"
