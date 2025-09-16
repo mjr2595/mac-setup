@@ -24,6 +24,7 @@ alias vi="nvim"
 alias g="groovy"
 alias pw="pennywise"
 alias codi="code-insiders"
+alias lg="lazygit"
 
 # lm work things
 export PATH=$PATH:/Volumes/me/coretool
