@@ -1,16 +1,9 @@
-add_newline = true
-format = """$all"""
-# format = """$directory$character"""
-# right_format = """$all"""
-
 [directory]
-truncation_length = 1
-truncation_symbol = '…/'
 read_only = " "
 
 [character]
-success_symbol = "[▶︎](bold green)"
-error_symbol = "[✘](bold red)"
+success_symbol = "[▶︎](green)"
+error_symbol = "[✘](red)"
 
 # These symbols will only show when battery levels are 20% or less
 [battery]
@@ -32,13 +25,13 @@ format = 'on [$symbol$project]($style) '
 [aws]
 disabled = true
 format = 'on [$symbol$profile]($style) '
-style = 'bold blue'
+style = 'blue'
 
 [azure]
 disabled = true
 format = 'on [$symbol($subscription)]($style) '
 symbol = 'ﴃ '
-style = 'blue bold'
+style = 'blue'
 
 [git_branch]
 symbol = " "
