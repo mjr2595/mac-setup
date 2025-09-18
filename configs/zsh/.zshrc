@@ -12,7 +12,7 @@ plugins=(
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' # Maybe needed depending on the theme
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' # Maybe needed depending on the theme
 export CLICOLOR=1 # Enable colors in ls
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1 # No VSCode extensions in brewfile
 

@@ -7,9 +7,8 @@ font-style-bold = Semibold
 font-style-italic = Light Italic
 font-style-bold-italic = Semibold Italic
 
-theme = dark:Ayu,light:Ayu Light
+theme = dark:ayu-dark,light:Primary
 
-background = 0B0E14
 background-opacity = 0.85
 background-blur = true
 
