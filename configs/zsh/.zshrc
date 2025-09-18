@@ -25,6 +25,12 @@ alias g="groovy"
 alias pw="pennywise"
 alias codi="code-insiders"
 alias lg="lazygit"
+alias gs="git status"
+alias ga="git add . && git status"
+alias gc="git commit -m"
+alias gp="git push"
+alias gfp="git fetch && git pull"
+alias gsw="git switch"
 
 # lm work things
 export PATH=$PATH:/Volumes/me/coretool
