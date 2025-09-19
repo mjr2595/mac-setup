@@ -7,7 +7,7 @@ font-style-bold = Semibold
 font-style-italic = Light Italic
 font-style-bold-italic = Semibold Italic
 
-theme = dark:ayu-dark,light:Primary
+theme = dark:Kanagawa Dragon,light:Primary
 
 background-opacity = 0.85
 background-blur = true

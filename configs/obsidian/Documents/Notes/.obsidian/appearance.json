@@ -5,6 +5,7 @@
   "monospaceFontFamily": "SFMono Nerd Font",
   "nativeMenus": false,
   "textFontFamily": "SFMono Nerd Font",
-  "accentColor": "#59c2ff",
-  "showRibbon": true
+  "accentColor": "#87a987",
+  "showRibbon": true,
+  "translucency": true
 }
