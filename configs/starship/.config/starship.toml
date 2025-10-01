@@ -2,8 +2,8 @@
 read_only = " "
 
 [character]
-success_symbol = "[▶︎](green)"
-error_symbol = "[✘](red)"
+success_symbol = "[▶︎](bold green)"
+error_symbol = "[✘](bold red)"
 
 # These symbols will only show when battery levels are 20% or less
 [battery]
