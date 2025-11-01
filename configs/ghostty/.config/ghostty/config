@@ -38,4 +38,4 @@ quick-terminal-position = bottom
 
 ###### KEYBINDINGS ######
 
-keybind = global:shift+ctrl+opt+cmd+t=toggle_quick_terminal
+keybind = global:shift+ctrl+opt+cmd+enter=toggle_quick_terminal
