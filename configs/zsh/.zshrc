@@ -1,10 +1,11 @@
-# Path to your oh-my-zsh installation.
+# ============================================
+# Oh My Zsh Configuration
+# ============================================
 export ZSH=$HOME/.oh-my-zsh
 
 plugins=(
     dotenv
     macos
-    python
     z
     zsh-autosuggestions
 )
@@ -12,11 +13,29 @@ plugins=(
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' # Maybe needed depending on the theme
-export CLICOLOR=1 # Enable colors in ls
-export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1 # No VSCode extensions in brewfile
+# ============================================
+# Environment & Shell Options
+# ============================================
 
-# Set personal aliases
+# Consolidated PATH
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$PATH"
+
+export CLICOLOR=1
+export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+export PYENV_ROOT="$HOME/.pyenv"
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# History
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+
+# ============================================
+# Aliases
+# ============================================
 alias ls="ls -A"
 alias ll="ls -lah"
 alias vim="nvim"
@@ -32,48 +51,98 @@ alias gp="git push"
 alias gfp="git fetch && git pull"
 alias gsw="git switch"
 
-# lm work things
+alias dotfiles="cd $HOME/mac-setup"
+alias configs="cd $HOME/mac-setup/configs"
+
+# ============================================
+# Work Configuration
+# ============================================
 export PATH=$PATH:/Volumes/me/coretool
-autoload -U +X compinit && compinit
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Check compinit once per day
+autoload -Uz compinit
+if [[ -n ${ZSH_COMPDUMP}(#qN.mh+24) ]]; then
+    compinit
+else
+    compinit -C
+fi
+
 autoload -U +X bashcompinit && bashcompinit
 source /Volumes/me/coretool/coretool-completion.bash
 
-# Other PATH stuff
+# ============================================
+# Language & Runtime Managers
+# ============================================
 
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
+# NVM 
 export NVM_DIR="$HOME/.nvm"
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+nvm() {
+    unset -f nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nvm "$@"
+}
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Defer iTerm2 integration (uncomment if needed)
+# if [[ -o interactive ]]; then
+#     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" &!
+# fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/michael/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/michael/google-cloud-sdk/path.zsh.inc'; fi
+# Google Cloud SDK (uncomment if needed)
+# if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+# if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/michael/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/michael/google-cloud-sdk/completion.zsh.inc'; fi
+# Python 
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+fi
+pyenv() {
+    unset -f pyenv
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+}
 
-# Created by `pipx` on 2023-06-13 01:47:23
-export PATH="$PATH:/Users/michael/.local/bin"
+# uv 
+uv() {
+    unset -f uv uvx
+    eval "$(command uv generate-shell-completion zsh)"
+    eval "$(command uvx --generate-shell-completion zsh)"
+    uv "$@"
+}
+uvx() {
+    unset -f uv uvx
+    eval "$(command uv generate-shell-completion zsh)"
+    eval "$(command uvx --generate-shell-completion zsh)"
+    uvx "$@"
+}
 
-# Flutter SDK
-export PATH="$PATH:/Users/michael/Tools/flutter/bin"
-export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-# Python
-eval "$(pyenv init --path)"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
-
-# Go
-export PATH="$PATH:$HOME/go/bin"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# SDKMAN 
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-# Generated for envman. Do not edit.
+sdk() {
+    unset -f sdk
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk "$@"
+}
+
+# envman
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-# Starship
+# ============================================
+# Prompt & Theme
+# ============================================
 eval "$(starship init zsh)"
-source "$HOME/.configure_tools.sh"
+
+# Work tools (background loaded)
+if [[ -f "$HOME/.configure_tools.sh" ]]; then
+    source "$HOME/.configure_tools.sh" &!
+fi
+
+# bun 
+export BUN_INSTALL="$HOME/.bun"
+bun() {
+    unset -f bun
+    [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+    command bun "$@"
+}
