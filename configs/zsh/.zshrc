@@ -50,28 +50,12 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gfp="git fetch && git pull"
 alias gsw="git switch"
-
-alias dotfiles="cd $HOME/mac-setup"
-alias configs="cd $HOME/mac-setup/configs"
+alias py="python"
 
 # ============================================
 # Work Configuration
 # ============================================
 export PATH=$PATH:/Volumes/me/coretool
-
-# Case-insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# Check compinit once per day
-autoload -Uz compinit
-if [[ -n ${ZSH_COMPDUMP}(#qN.mh+24) ]]; then
-    compinit
-else
-    compinit -C
-fi
-
-autoload -U +X bashcompinit && bashcompinit
-source /Volumes/me/coretool/coretool-completion.bash
 
 # ============================================
 # Language & Runtime Managers
@@ -84,15 +68,6 @@ nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     nvm "$@"
 }
-
-# Defer iTerm2 integration (uncomment if needed)
-# if [[ -o interactive ]]; then
-#     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" &!
-# fi
-
-# Google Cloud SDK (uncomment if needed)
-# if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-# if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Python 
 if command -v pyenv 1>/dev/null 2>&1; then
