@@ -56,6 +56,7 @@ alias py="python"
 # Work Configuration
 # ============================================
 export PATH=$PATH:/Volumes/me/coretool
+source "$HOME/.configure_tools.sh"
 
 # ============================================
 # Language & Runtime Managers
