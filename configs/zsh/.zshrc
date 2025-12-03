@@ -18,13 +18,14 @@ source $ZSH/oh-my-zsh.sh
 # ============================================
 
 # Consolidated PATH
-export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$PATH"
 
 export CLICOLOR=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
 export PYENV_ROOT="$HOME/.pyenv"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 
 # History
 HISTSIZE=10000
