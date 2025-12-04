@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # ============================================
 
 # Consolidated PATH
-export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$HOME/.opencode/bin:$PATH"
 
 export CLICOLOR=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
@@ -69,6 +69,11 @@ nvm() {
     unset -f nvm
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     nvm "$@"
+}
+codex() {
+    unset -f codex
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    command codex "$@"
 }
 
 # Python 
