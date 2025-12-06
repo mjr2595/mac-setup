@@ -24,14 +24,12 @@ cd ~/mac-setup/configs
 stow -t ~ zsh
 stow -t ~ starship
 stow -t ~ ghostty
-stow -t ~ zed
 stow -t ~ obsidian
 
 # verify symlinks
 ls -l ~/.zshrc
 ls -l ~/.config/starship.toml
 ls -l ~/.config/ghostty/config
-ls -l ~/.config/zed
 ls -l ~/Documents/Notes
 
 # configure git

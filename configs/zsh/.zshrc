@@ -41,8 +41,6 @@ alias ls="ls -A"
 alias ll="ls -lah"
 alias vim="nvim"
 alias vi="nvim"
-alias g="groovy"
-alias pw="pennywise"
 alias codi="code-insiders"
 alias lg="lazygit"
 alias gs="git status"
@@ -52,6 +50,9 @@ alias gp="git push"
 alias gfp="git fetch && git pull"
 alias gsw="git switch"
 alias py="python"
+alias g="groovy"
+alias pw="pennywise"
+alias jt="jiratool"
 
 # ============================================
 # Work Configuration
@@ -74,6 +75,14 @@ codex() {
     unset -f codex
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     command codex "$@"
+}
+
+# bun 
+export BUN_INSTALL="$HOME/.bun"
+bun() {
+    unset -f bun
+    [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+    command bun "$@"
 }
 
 # Python 
@@ -115,16 +124,3 @@ sdk() {
 # Prompt & Theme
 # ============================================
 eval "$(starship init zsh)"
-
-# Work tools (background loaded)
-if [[ -f "$HOME/.configure_tools.sh" ]]; then
-    source "$HOME/.configure_tools.sh" &!
-fi
-
-# bun 
-export BUN_INSTALL="$HOME/.bun"
-bun() {
-    unset -f bun
-    [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
-    command bun "$@"
-}

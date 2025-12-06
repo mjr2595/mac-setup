@@ -17,7 +17,7 @@ configs/
 │   └── .config/
 │       └── ghostty/
 │           └── config
-└── zed/
+└── zed/ (removed)
     └── .config/
         └── zed/
             ├── settings.json
@@ -34,12 +34,10 @@ If you already have config files in your home directory, copy them into the appr
 mkdir -p ~/mac-setup/configs/zsh
 mkdir -p ~/mac-setup/configs/starship/.config
 mkdir -p ~/mac-setup/configs/ghostty/.config/ghostty
-mkdir -p ~/mac-setup/configs/zed/.config
 
 cp ~/.zshrc ~/mac-setup/configs/zsh/.zshrc
 cp ~/.config/starship.toml ~/mac-setup/configs/starship/.config/starship.toml
 cp ~/.config/ghostty/config ~/mac-setup/configs/ghostty/.config/ghostty/config
-cp -R ~/.config/zed ~/mac-setup/configs/zed/.config/
 ```
 
 ### 2. Backup and Remove Originals
@@ -50,7 +48,6 @@ Before using Stow, backup and remove the original files from your home directory
 mv ~/.zshrc ~/.zshrc.backup
 mv ~/.config/starship.toml ~/.config/starship.toml.backup
 mv ~/.config/ghostty/config ~/.config/ghostty_config.backup
-mv ~/.config/zed ~/.config/zed.backup
 ```
 
 ### 3. Install GNU Stow
@@ -70,7 +67,6 @@ cd ~/mac-setup/configs
 stow -t ~ zsh
 stow -t ~ starship
 stow -t ~ ghostty
-stow -t ~ zed
 ```
 
 ### 5. Verify Symlinks
@@ -81,7 +77,6 @@ Check that the symlinks were created correctly:
 ls -l ~/.zshrc
 ls -l ~/.config/starship.toml
 ls -l ~/.config/ghostty/config
-ls -l ~/.config/zed
 ```
 
 You should see that each file is now a symlink pointing to the corresponding file in this repo.
