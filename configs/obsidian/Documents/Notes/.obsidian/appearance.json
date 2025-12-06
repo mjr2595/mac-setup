@@ -2,9 +2,9 @@
   "cssTheme": "Minimal",
   "interfaceFontFamily": "",
   "baseFontSize": 17,
-  "monospaceFontFamily": "SFMono Nerd Font",
+  "monospaceFontFamily": "Monaspace Neon",
   "nativeMenus": false,
-  "textFontFamily": "SFMono Nerd Font",
+  "textFontFamily": "Monaspace Neon",
   "accentColor": "#87a987",
   "showRibbon": true,
   "translucency": true

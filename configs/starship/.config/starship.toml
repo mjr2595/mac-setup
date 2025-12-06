@@ -10,7 +10,7 @@ error_symbol = "[✘](bold red)"
 # These symbols will only show when battery levels are 20% or less
 [battery]
 disabled = true
-charging_symbol = "⚡️ "
+charging_symbol = "󱐋 "
 discharging_symbol = " "
 
 # Clear visibility for exit codes
@@ -58,7 +58,7 @@ symbol = " "
 symbol = " "
 
 [bun]
-symbol = " "
+symbol = " "
 
 [c]
 symbol = " "
@@ -85,7 +85,7 @@ symbol = " "
 symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
 symbol = " "
@@ -100,7 +100,7 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [package]
 symbol = " "
@@ -118,4 +118,4 @@ symbol = " "
 format = 'via [$symbol]($style) '
 detect_extensions = ['groovy']
 detect_files = ['.groovylintrc.json']
-symbol = " v4"
+symbol = " "
