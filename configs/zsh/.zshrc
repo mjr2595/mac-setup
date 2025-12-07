@@ -7,8 +7,14 @@ plugins=(
     dotenv
     macos
     z
-    zsh-autosuggestions
 )
+
+# Defer autosuggestions to speed up startup
+zshinit_deferred() {
+    source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd zshinit_deferred
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
@@ -58,7 +64,13 @@ alias jt="jiratool"
 # Work Configuration
 # ============================================
 export PATH=$PATH:/Volumes/me/coretool
-source "$HOME/.configure_tools.sh"
+# Defer if not needed immediately
+if [[ -f "$HOME/.configure_tools.sh" ]]; then
+    configure_tools() {
+        unset -f configure_tools
+        source "$HOME/.configure_tools.sh"
+    }
+fi
 
 # ============================================
 # Language & Runtime Managers
@@ -76,6 +88,11 @@ codex() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
     command codex "$@"
 }
+pnpm() {
+    unset -f pnpm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    command pnpm "$@"
+}
 
 # bun 
 export BUN_INSTALL="$HOME/.bun"
@@ -86,7 +103,8 @@ bun() {
 }
 
 # Python 
-if command -v pyenv 1>/dev/null 2>&1; then
+# Skip pyenv path init if already set
+if [[ ":$PATH:" != *":$PYENV_ROOT/shims:"* ]] && command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init --path)"
 fi
 pyenv() {
@@ -117,10 +135,18 @@ sdk() {
     sdk "$@"
 }
 
-# envman
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# envman - defer loading
+envman() {
+    unset -f envman
+    [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+    envman "$@"
+}
 
 # ============================================
 # Prompt & Theme
 # ============================================
-eval "$(starship init zsh)"
+# Cache starship init for faster startup
+if [[ ! -f "$HOME/.starship_cache" ]] || [[ "$(command -v starship)" -nt "$HOME/.starship_cache" ]]; then
+    starship init zsh > "$HOME/.starship_cache"
+fi
+source "$HOME/.starship_cache"
