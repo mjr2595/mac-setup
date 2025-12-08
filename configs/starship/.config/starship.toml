@@ -118,4 +118,4 @@ symbol = " "
 format = 'via [$symbol]($style) '
 detect_extensions = ['groovy']
 detect_files = ['.groovylintrc.json']
-symbol = " "
+symbol = ""
