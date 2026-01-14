@@ -1,4 +1,7 @@
 {
   "hidden": true,
-  "hiddenList": ["x_Media", "x_Archive"]
+  "hiddenList": [
+    "x_Media",
+    "x_Archive"
+  ]
 }

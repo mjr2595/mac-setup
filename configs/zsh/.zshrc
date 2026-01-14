@@ -64,12 +64,8 @@ alias jt="jiratool"
 # Work Configuration
 # ============================================
 export PATH=$PATH:/Volumes/me/coretool
-# Defer if not needed immediately
 if [[ -f "$HOME/.configure_tools.sh" ]]; then
-    configure_tools() {
-        unset -f configure_tools
-        source "$HOME/.configure_tools.sh"
-    }
+    source "$HOME/.configure_tools.sh"
 fi
 
 # ============================================
