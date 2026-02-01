@@ -216,7 +216,7 @@ setup_dotfiles() {
     
     cd "$SCRIPT_DIR/configs"
     
-    local configs=("zsh" "starship" "ghostty" "obsidian")
+    local configs=("zsh" "starship" "ghostty" "obsidian" "git")
     
     for config in "${configs[@]}"; do
         if [ ! -d "$config" ]; then
@@ -237,10 +237,68 @@ setup_dotfiles() {
     [ -L "$HOME/.zshrc" ] && print_success ".zshrc symlink verified" || print_warning ".zshrc not symlinked"
     [ -L "$HOME/.config/starship.toml" ] && print_success "starship.toml symlink verified" || print_warning "starship.toml not symlinked"
     [ -L "$HOME/.config/ghostty/config" ] && print_success "ghostty config symlink verified" || print_warning "ghostty config not symlinked"
+    [ -L "$HOME/.gitconfig" ] && print_success ".gitconfig symlink verified" || print_warning ".gitconfig not symlinked"
 }
 
 configure_git() {
     print_header "Git Configuration"
+    
+    # Check if gitconfig is managed by stow
+    if [ -L "$HOME/.gitconfig" ]; then
+        print_success "Git config is managed by stow (symlinked)"
+        print_info "Edit $SCRIPT_DIR/configs/git/.gitconfig to update base configuration"
+        echo ""
+        
+        # Setup .gitconfig.local for personal settings first
+        local current_email=$(git config user.email 2>/dev/null)
+        
+        if [ -z "$current_email" ]; then
+            print_info "Setting up ~/.gitconfig.local for personal settings..."
+            read -p "Enter your git email: " git_email
+            if [ -n "$git_email" ]; then
+                echo "[user]" > "$HOME/.gitconfig.local"
+                echo "	email = $git_email" >> "$HOME/.gitconfig.local"
+                print_success "Git email configured in ~/.gitconfig.local"
+            else
+                print_warning "Git email not configured"
+            fi
+        else
+            print_success "Git email already set: $current_email"
+        fi
+        
+        # Offer SSH commit signing setup
+        echo ""
+        if prompt_confirm "Setup SSH commit signing? (recommended over GPG)"; then
+            local ssh_key="$HOME/.ssh/id_ed25519.pub"
+            
+            if [ ! -f "$ssh_key" ]; then
+                print_warning "SSH key not found at $ssh_key"
+                print_info "Generate one with: ssh-keygen -t ed25519 -C \"your-email@example.com\""
+            else
+                # Add SSH signing config to .gitconfig.local
+                if [ ! -f "$HOME/.gitconfig.local" ]; then
+                    touch "$HOME/.gitconfig.local"
+                fi
+                
+                if ! grep -q "gpg.format" "$HOME/.gitconfig.local" 2>/dev/null; then
+                    echo "" >> "$HOME/.gitconfig.local"
+                    echo "[gpg]" >> "$HOME/.gitconfig.local"
+                    echo "	format = ssh" >> "$HOME/.gitconfig.local"
+                    echo "[user]" >> "$HOME/.gitconfig.local"
+                    echo "	signingkey = $ssh_key" >> "$HOME/.gitconfig.local"
+                    echo "[commit]" >> "$HOME/.gitconfig.local"
+                    echo "	gpgsign = true" >> "$HOME/.gitconfig.local"
+                fi
+                
+                print_success "SSH commit signing configured in ~/.gitconfig.local"
+                print_info "Don't forget to add your SSH key as a 'Signing Key' on GitHub"
+            fi
+        fi
+        return 0
+    fi
+    
+    # Proceed with interactive configuration if not symlinked
+    print_info "Configuring git interactively..."
     
     # Check current configuration
     local current_name=$(git config --global user.name 2>/dev/null)
