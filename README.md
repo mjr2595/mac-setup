@@ -2,6 +2,23 @@
 
 This repo contains info on all the apps, tools, and settings I use on my Mac
 
+### Automated Setup
+
+Run the [`setup.sh`](setup.sh) script to automate the entire Mac setup process. The script handles:
+
+- Installing Xcode Command Line Tools
+- Installing Homebrew
+- Installing Oh My Zsh with plugins
+- Managing packages via Brewfiles
+- Creating necessary directories
+- Setting up dotfiles with GNU Stow
+- Configuring Git
+- Applying macOS system preferences
+
+### macOS System Preferences
+
+The [`macos-defaults.sh`](macos-defaults.sh) script configures macOS system preferences including keyboard repeat rate, Finder settings, Dock customization, screenshot locations, and more. Run it standalone or as part of the main setup script.
+
 ### Config Files
 
 Config files are organized by application and managed using [GNU Stow](https://www.gnu.org/software/stow/). See the [configs](./configs/) readme for more deets.
@@ -17,7 +34,10 @@ I also have some helpful scripts n things in this repo. Most of these I integrat
 ### Themes
 
 I switch up themes pretty often to help spice things up. Sometimes just based on mood or the season...
-Here's a list of some of my favorites so far:
+
+**Current theme:** [Kanagawa (Kazte)](https://marketplace.visualstudio.com/items?itemName=Kazte.kanagawa-kazte-vscode-color-theme)
+
+Here's a list of some of my past favorites:
 
 - [Ayu](https://github.com/ayu-theme)
   - [Ayu Borderless for Zed](https://github.com/babyccino/Borderless-Ayu-Zed)
