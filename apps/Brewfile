@@ -1,0 +1,79 @@
+# Taps
+tap "epk/epk"
+tap "homebrew/bundle"
+
+# ============================================
+# CLI Tools - Core Development
+# ============================================
+brew "btop"              # Resource monitor
+brew "gh"                # GitHub CLI
+brew "neovim"            # Text editor
+brew "pyenv"             # Python version manager
+brew "starship"          # Shell prompt
+brew "stow"              # Symlink manager
+brew "uv"                # Python package installer
+
+# Node.js
+brew "nvm"               # Node version manager
+brew "pnpm"              # Fast Node package manager
+
+# Networking & Utilities
+brew "mole"              # Port forwarding
+
+# ============================================
+# Development Tools (Casks)
+# ============================================
+cask "1password-cli"                # 1Password CLI
+cask "docker-desktop"               # Docker
+cask "ghostty"                      # Terminal
+cask "postman"                      # API testing
+cask "visual-studio-code@insiders"  # VS Code Insiders
+
+# ============================================
+# Browsers
+# ============================================
+cask "brave-browser"
+cask "helium-browser"
+
+# ============================================
+# Fonts
+# ============================================
+cask "font-monaspace"
+cask "font-sf-mono-nerd-font"
+
+# ============================================
+# Productivity & Utilities
+# ============================================
+cask "hiddenbar"         # Menu bar manager
+cask "obsidian"          # Note-taking
+cask "raycast"           # Spotlight replacement
+cask "todoist-app"       # Task manager
+
+# ============================================
+# Communication & Collaboration
+# ============================================
+cask "discord"
+cask "slack"
+
+# ============================================
+# Creative & Media
+# ============================================
+cask "balenaetcher"      # USB/SD card writer
+
+# ============================================
+# Work-Specific Packages
+# ============================================
+# PROFILE:work
+cask "cursor"            # AI code editor
+# END:work
+
+# ============================================
+# Personal-Specific Packages
+# ============================================
+# PROFILE:personal
+brew "block-goose-cli"   # Block Goose CLI
+cask "audacity"          # Audio editor
+cask "block-goose"       # Block Goose
+cask "gimp"              # Image editor
+cask "shottr"            # Screenshot tool
+# END:personal
