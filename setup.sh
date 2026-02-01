@@ -104,8 +104,13 @@ install_homebrew() {
         print_success "Homebrew already installed: $(brew --version | head -n1)"
         
         if prompt_confirm "Update Homebrew?"; then
-            brew update
-            print_success "Homebrew updated"
+            print_info "Updating Homebrew..."
+            if brew update; then
+                print_success "Homebrew updated"
+            else
+                print_warning "Homebrew update failed (network/API issue)"
+                print_info "Continuing with existing Homebrew version..."
+            fi
         fi
         return 0
     fi

@@ -220,21 +220,6 @@ defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screen
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # ============================================
-# Safari & WebKit
-# ============================================
-echo "→ Configuring Safari..."
-
-# Note: Using default Safari settings
-
-# Enable the Develop menu and the Web Inspector
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-
-# Show the full URL in the address bar
-# defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-
-# ============================================
 # Terminal
 # ============================================
 echo "→ Configuring Terminal..."
@@ -289,8 +274,7 @@ for app in "Activity Monitor" \
     "cfprefsd" \
     "Dock" \
     "Finder" \
-    "SystemUIServer" \
-    "Safari"; do
+    "SystemUIServer"; do
     killall "${app}" &> /dev/null || true
 done
 
