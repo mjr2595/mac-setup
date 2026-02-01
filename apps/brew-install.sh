@@ -17,15 +17,16 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 print_usage() {
-    echo "Usage: $0 [personal|work|all|addon]"
+    echo "Usage: $0 [common|personal|work|all|addon]"
     echo ""
     echo "Options:"
+    echo "  common    - Install only common packages (default)"
     echo "  personal  - Install common + personal-specific packages"
     echo "  work      - Install common + work-specific packages"
     echo "  all       - Install everything (personal + work)"
     echo "  addon     - Install base profile, then interactively add packages from other profile"
     echo ""
-    echo "If no option is provided, you'll be prompted to choose."
+    echo "If no option is provided, common packages will be installed."
 }
 
 print_info() {
@@ -61,8 +62,15 @@ filter_brewfile() {
     if [ "$profile" == "all" ]; then
         # Install everything - just copy the file but remove profile markers
         sed -E '/^# (PROFILE|END):/d' "$BREWFILE" > "$TEMP_BREWFILE"
+    elif [ "$profile" == "common" ]; then
+        # Install only common packages - exclude everything in PROFILE sections
+        awk '
+            /^# PROFILE:/ { skip = 1; next }
+            /^# END:/ { skip = 0; next }
+            !skip { print }
+        ' "$BREWFILE" > "$TEMP_BREWFILE"
     else
-        # Filter based on profile
+        # Filter based on profile (personal or work)
         awk -v profile="$profile" '
             BEGIN { 
                 skip = 0
@@ -267,13 +275,13 @@ main() {
     
     check_homebrew
     
-    local profile=""
+    local profile="common"
     local addon_mode=false
     
     # Check if profile was provided as argument
     if [ $# -eq 1 ]; then
         case "$1" in
-            personal|work|all)
+            common|personal|work|all)
                 profile="$1"
                 ;;
             addon)
@@ -289,27 +297,35 @@ main() {
                 exit 1
                 ;;
         esac
+    elif [ $# -gt 1 ]; then
+        print_error "Too many arguments"
+        print_usage
+        exit 1
     else
         # Prompt user to choose
         echo "Select installation profile:"
-        echo "  1) Personal (common + personal packages)"
-        echo "  2) Work (common + work packages)"
-        echo "  3) All (everything)"
-        echo "  4) Addon (base profile + select additional packages)"
+        echo "  1) Common only (shared packages)"
+        echo "  2) Personal (common + personal packages)"
+        echo "  3) Work (common + work packages)"
+        echo "  4) All (everything)"
+        echo "  5) Addon (base profile + select additional packages)"
         echo ""
-        read -p "Enter choice [1-4]: " choice
+        read -p "Enter choice [1-5]: " choice
         
         case "$choice" in
             1)
-                profile="personal"
+                profile="common"
                 ;;
             2)
-                profile="work"
+                profile="personal"
                 ;;
             3)
-                profile="all"
+                profile="work"
                 ;;
             4)
+                profile="all"
+                ;;
+            5)
                 addon_mode=true
                 ;;
             *)
@@ -322,17 +338,39 @@ main() {
     if [ "$addon_mode" = true ]; then
         echo ""
         echo "Select base profile:"
-        echo "  1) Work"
-        echo "  2) Personal"
+        echo "  1) Common (shared packages only)"
+        echo "  2) Work (common + work packages)"
+        echo "  3) Personal (common + personal packages)"
         echo ""
-        read -p "Enter choice [1-2]: " base_choice
+        read -p "Enter choice [1-3]: " base_choice
         
         case "$base_choice" in
             1)
+                profile="common"
+                echo ""
+                echo "Select addon profile:"
+                echo "  1) Personal"
+                echo "  2) Work"
+                echo ""
+                read -p "Enter choice [1-2]: " addon_choice
+                case "$addon_choice" in
+                    1)
+                        addon_profile="personal"
+                        ;;
+                    2)
+                        addon_profile="work"
+                        ;;
+                    *)
+                        print_error "Invalid choice"
+                        exit 1
+                        ;;
+                esac
+                ;;
+            2)
                 profile="work"
                 addon_profile="personal"
                 ;;
-            2)
+            3)
                 profile="personal"
                 addon_profile="work"
                 ;;

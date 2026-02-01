@@ -1,6 +1,21 @@
 .DS_Store
 
+# Temporary Brewfile
+apps/.Brewfile.tmp
+
+# Python virtual environments
 .venv
+
+# Sensitive/local configuration files
+**/.gitconfig.local
+**/*.local
+*.local
+.env
+.env.*
+**/*_token
+**/*_key
+
+# Application-specific ignores
 plist-to-json/text_replacements.*
 workspace.json
 
