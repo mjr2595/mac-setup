@@ -38,12 +38,22 @@ git config --global user.email ****
 git config --global init.defaultbranch main
 # optionally set up work gitconfig
 
-# Python stuff
-echo 'eval "$(pyenv init --path)"' >> ~/.zshrc # should already be in there
-pyenv install -l
-pyenv install [PYTHON_VERSION]
-pyenv global [PYTHON_VERSION]
-pyenv versions
+# Python with uv
+# List available Python versions
+uv python list
+
+# Install Python version (e.g., 3.12, 3.13)
+uv python install [PYTHON_VERSION]
+
+# Set global Python version (creates ~/.python-version)
+uv python pin --global [PYTHON_VERSION]
+
+# Install Python executable to PATH (optional, adds python3.X to ~/.local/bin)
+uv python install [PYTHON_VERSION] --default
+
+# Verify installation
+uv python list --only-installed
+uv python find
 
 # OPTIONAL: Vim stuff
 # install vim-plug
@@ -55,6 +65,3 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Neovim (~/.local/share/nvim/site/autoload)
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Non-package manager apps
-# Copilot.app -- for money stuff

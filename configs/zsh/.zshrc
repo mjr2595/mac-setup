@@ -24,11 +24,10 @@ source $ZSH/oh-my-zsh.sh
 # ============================================
 
 # Consolidated PATH
-export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:$HOME/.pyenv/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$HOME/.opencode/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$HOME/.opencode/bin:$PATH"
 
 export CLICOLOR=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
-export PYENV_ROOT="$HOME/.pyenv"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
@@ -97,16 +96,6 @@ bun() {
     command bun "$@"
 }
 
-# Python 
-# Skip pyenv path init if already set
-if [[ ":$PATH:" != *":$PYENV_ROOT/shims:"* ]] && command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init --path)"
-fi
-pyenv() {
-    unset -f pyenv
-    eval "$(command pyenv init -)"
-    pyenv "$@"
-}
 
 # uv 
 uv() {
