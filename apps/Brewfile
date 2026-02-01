@@ -8,7 +8,6 @@ tap "homebrew/bundle"
 brew "btop"              # Resource monitor
 brew "gh"                # GitHub CLI
 brew "neovim"            # Text editor
-brew "pyenv"             # Python version manager
 brew "starship"          # Shell prompt
 brew "stow"              # Symlink manager
 brew "uv"                # Python package installer

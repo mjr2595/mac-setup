@@ -15,6 +15,20 @@ Run the [`setup.sh`](setup.sh) script to automate the entire Mac setup process. 
 - Configuring Git
 - Applying macOS system preferences
 
+**Quick start:**
+
+```bash
+./setup.sh           # Interactive mode (prompts for each step)
+./setup.sh --typical # Typical setup (auto-confirm, skip optional features)
+```
+
+The `--typical` flag runs a streamlined setup that automatically confirms all standard steps while skipping:
+
+- Additional profile-specific package installation
+- SSH commit signing setup
+
+This is just my current preferred setup.
+
 ### macOS System Preferences
 
 The [`macos-defaults.sh`](macos-defaults.sh) script configures macOS system preferences including keyboard repeat rate, Finder settings, Dock customization, screenshot locations, and more. Run it standalone or as part of the main setup script.

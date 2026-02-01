@@ -246,8 +246,8 @@ interactive_addon() {
     done
     echo ""
     
-    read -p "Continue? [y/N]: " confirm
-    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+    read -p "Continue? [Y/n]: " confirm
+    if [[ "$confirm" =~ ^[Nn]$ ]]; then
         print_warning "Installation cancelled"
         return
     fi
@@ -278,62 +278,28 @@ main() {
     local profile="common"
     local addon_mode=false
     
-    # Check if profile was provided as argument
-    if [ $# -eq 1 ]; then
-        case "$1" in
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
             common|personal|work|all)
                 profile="$1"
+                shift
                 ;;
             addon)
                 addon_mode=true
+                shift
                 ;;
             -h|--help)
                 print_usage
                 exit 0
                 ;;
             *)
-                print_error "Invalid profile: $1"
+                print_error "Invalid argument: $1"
                 print_usage
                 exit 1
                 ;;
         esac
-    elif [ $# -gt 1 ]; then
-        print_error "Too many arguments"
-        print_usage
-        exit 1
-    else
-        # Prompt user to choose
-        echo "Select installation profile:"
-        echo "  1) Common only (shared packages)"
-        echo "  2) Personal (common + personal packages)"
-        echo "  3) Work (common + work packages)"
-        echo "  4) All (everything)"
-        echo "  5) Addon (base profile + select additional packages)"
-        echo ""
-        read -p "Enter choice [1-5]: " choice
-        
-        case "$choice" in
-            1)
-                profile="common"
-                ;;
-            2)
-                profile="personal"
-                ;;
-            3)
-                profile="work"
-                ;;
-            4)
-                profile="all"
-                ;;
-            5)
-                addon_mode=true
-                ;;
-            *)
-                print_error "Invalid choice"
-                exit 1
-                ;;
-        esac
-    fi
+    done
     
     if [ "$addon_mode" = true ]; then
         echo ""
@@ -384,8 +350,8 @@ main() {
         print_info "Selected base profile: $profile"
         echo ""
         
-        read -p "Install $profile packages first? [y/N]: " confirm
-        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        read -p "Install $profile packages first? [Y/n]: " confirm
+        if [[ ! "$confirm" =~ ^[Nn]$ ]]; then
             install_packages "$profile"
             echo ""
         fi
@@ -400,13 +366,6 @@ main() {
         echo ""
         print_info "Selected profile: $profile"
         echo ""
-        
-        # Confirm before installing
-        read -p "Continue with installation? [y/N]: " confirm
-        if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
-            print_warning "Installation cancelled"
-            exit 0
-        fi
         
         echo ""
         install_packages "$profile"

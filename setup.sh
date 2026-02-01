@@ -6,6 +6,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TYPICAL_SETUP=false
 
 # Colors for output
 RED='\033[0;31m'
@@ -19,10 +20,22 @@ NC='\033[0m' # No Color
 # Helper Functions
 # ============================================
 
+print_usage() {
+    echo "Usage: $0 [OPTIONS]"
+    echo ""
+    echo "Options:"
+    echo "  -t, --typical    Run typical setup (auto-confirm all except profile packages and SSH signing)"
+    echo "  -h, --help       Show this help message"
+    echo ""
+}
+
 print_header() {
+    local text="  $1"
+    local width=40
+    local padding=$((width - ${#text}))
     echo ""
     echo -e "${CYAN}╔════════════════════════════════════════╗${NC}"
-    echo -e "${CYAN}║${NC}  $1"
+    printf "${CYAN}║${NC}%-${width}s${CYAN}║${NC}\n" "$text"
     echo -e "${CYAN}╚════════════════════════════════════════╝${NC}"
     echo ""
 }
@@ -45,8 +58,20 @@ print_error() {
 
 prompt_confirm() {
     local message="$1"
-    read -p "$(echo -e ${BLUE}?${NC}) $message [y/N]: " response
-    [[ "$response" =~ ^[Yy]$ ]]
+    local skip_in_typical="${2:-no}"  # second param: "skip" means return false in typical mode
+    
+    # In typical setup mode
+    if [ "$TYPICAL_SETUP" = true ]; then
+        if [ "$skip_in_typical" = "skip" ]; then
+            return 1  # Return false (N)
+        else
+            return 0  # Return true (Y)
+        fi
+    fi
+    
+    # Normal interactive mode
+    read -p "$(echo -e ${BLUE}?${NC}) $message [Y/n]: " response
+    [[ -z "$response" || "$response" =~ ^[Yy]$ ]]
 }
 
 # ============================================
@@ -156,7 +181,7 @@ install_packages() {
         
         # Offer to install additional packages
         echo ""
-        if prompt_confirm "Install additional profile-specific packages?"; then
+        if prompt_confirm "Install additional profile-specific packages?" "skip"; then
             echo ""
             echo "Select profile to add:"
             echo "  1) Personal packages"
@@ -268,7 +293,7 @@ configure_git() {
         
         # Offer SSH commit signing setup
         echo ""
-        if prompt_confirm "Setup SSH commit signing? (recommended over GPG)"; then
+        if prompt_confirm "Setup SSH commit signing? (recommended over GPG)" "skip"; then
             local ssh_key="$HOME/.ssh/id_ed25519.pub"
             
             if [ ! -f "$ssh_key" ]; then
@@ -345,7 +370,7 @@ configure_git() {
     
     # Optional: SSH commit signing
     echo ""
-    if prompt_confirm "Setup SSH commit signing? (recommended over GPG)"; then
+    if prompt_confirm "Setup SSH commit signing? (recommended over GPG)" "skip"; then
         local ssh_key="$HOME/.ssh/id_ed25519.pub"
         
         if [ ! -f "$ssh_key" ]; then
@@ -364,15 +389,16 @@ configure_git() {
 setup_node() {
     print_header "Node.js Setup"
     
+    # Source nvm first (it may be lazy-loaded in zshrc)
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+    
+    # Now check if nvm is available
     if ! command -v nvm &> /dev/null; then
         print_warning "nvm not found. Install via Homebrew first"
         return 1
     fi
-    
-    # Source nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
     
     if prompt_confirm "Install Node.js LTS via nvm?"; then
         print_info "Installing Node.js LTS..."
@@ -408,15 +434,30 @@ apply_macos_defaults() {
 # ============================================
 
 main() {
+    # Parse command line arguments
+    if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+        print_usage
+        exit 0
+    fi
+    
+    if [[ "$1" == "--typical" || "$1" == "-t" ]]; then
+        TYPICAL_SETUP=true
+    fi
+    
     clear
     echo ""
-    echo -e "${CYAN}╔══════════════════════════════════════════════════╗${NC}"
-    echo -e "${CYAN}║${NC}          macOS Setup & Configuration            ${CYAN}║${NC}"
-    echo -e "${CYAN}╚══════════════════════════════════════════════════╝${NC}"
+    echo -e "${CYAN}╔════════════════════════════════════════╗${NC}"
+    echo -e "${CYAN}║${NC}              Mac Setup                 ${CYAN}║${NC}"
+    echo -e "${CYAN}╚════════════════════════════════════════╝${NC}"
     echo ""
     echo "This script will help you set up your Mac with all"
     echo "your preferred tools, apps, and configurations."
     echo ""
+    
+    if [ "$TYPICAL_SETUP" = true ]; then
+        print_info "Running in typical setup mode (auto-confirm enabled)"
+        echo ""
+    fi
     
     if ! prompt_confirm "Continue with setup?"; then
         print_warning "Setup cancelled"
@@ -437,7 +478,7 @@ main() {
     
     # Final summary
     echo ""
-    print_header "Setup Complete! 🎉"
+    print_header "Setup Complete!"
     echo ""
     echo "Next steps:"
     echo "  1. Restart your terminal or run: source ~/.zshrc"
@@ -448,7 +489,6 @@ main() {
     echo ""
     echo "Optional:"
     echo "  - Import browser settings from apps/Sync/Browser/"
-    echo "  - Import iTerm2 profile from apps/Sync/iTerm2/"
     echo "  - Import Raycast settings from apps/Sync/Raycast/"
     echo ""
     echo "Python with uv:"
