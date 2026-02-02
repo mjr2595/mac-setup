@@ -491,6 +491,7 @@ main() {
     echo "  3. Setup SSH keys: ssh-keygen -t ed25519 -C \"your-email\""
     echo "  4. Add SSH key to GitHub (including as Signing Key)"
     echo "  5. Run: gh auth login"
+    echo "  6. Set Appearance: Dark Mode, Graphite accent/highlight, Night Shift"
     echo ""
     echo "Optional:"
     echo "  - Import browser settings from apps/Sync/Browser/"
