@@ -17,8 +17,9 @@ window-save-state = never
 window-padding-balance = true
 window-padding-x = 10
 window-padding-y = 5
-window-height = 45
-window-width = 120
+# fullscreen
+window-height = 5000
+window-width = 5000
 
 
 ###### OS STUFF ######
