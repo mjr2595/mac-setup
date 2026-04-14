@@ -9,3 +9,5 @@
 
 [includeIf "gitdir:/Volumes/me/**"]
 	path = /Volumes/me/.gitconfig
+[core]
+	sshCommand = ssh -o WarnWeakCrypto=no-pq-kex
