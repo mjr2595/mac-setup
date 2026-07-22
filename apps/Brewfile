@@ -1,4 +1,5 @@
 # Taps
+tap "anomalyco/tap"
 tap "epk/epk"
 tap "homebrew/bundle"
 
@@ -18,6 +19,7 @@ brew "pnpm"              # Fast Node package manager
 
 # Networking & Utilities
 brew "mole"              # Port forwarding
+brew "opencode"          # AI coding agent
 
 # ============================================
 # Development Tools (Casks)
@@ -25,6 +27,7 @@ brew "mole"              # Port forwarding
 cask "1password-cli"                # 1Password CLI
 cask "docker-desktop"               # Docker
 cask "ghostty"                      # Terminal
+cask "opencode-desktop"             # OpenCode Desktop
 cask "postman"                      # API testing
 cask "visual-studio-code@insiders"  # VS Code Insiders
 

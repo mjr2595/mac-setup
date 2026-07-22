@@ -57,6 +57,7 @@ alias py="python"
 alias g="groovy"
 alias pw="pennywise"
 alias jt="jiratool"
+alias oc="opencode"
 
 # ============================================
 # Work Configuration
