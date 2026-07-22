@@ -246,7 +246,7 @@ setup_dotfiles() {
     
     cd "$SCRIPT_DIR/configs"
     
-    local configs=("zsh" "starship" "ghostty" "obsidian" "git")
+    local configs=("zsh" "starship" "ghostty" "obsidian" "git" "opencode")
     
     for config in "${configs[@]}"; do
         if [ ! -d "$config" ]; then
@@ -268,6 +268,7 @@ setup_dotfiles() {
     [ -L "$HOME/.config/starship.toml" ] && print_success "starship.toml symlink verified" || print_warning "starship.toml not symlinked"
     [ -L "$HOME/.config/ghostty/config" ] && print_success "ghostty config symlink verified" || print_warning "ghostty config not symlinked"
     [ -L "$HOME/.gitconfig" ] && print_success ".gitconfig symlink verified" || print_warning ".gitconfig not symlinked"
+    [ -L "$HOME/.config/opencode/config.json" ] && print_success "opencode config symlink verified" || print_warning "opencode config not symlinked"
 }
 
 configure_git() {

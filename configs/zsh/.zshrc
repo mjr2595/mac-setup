@@ -28,9 +28,10 @@ export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:/usr/local/opt/libpq/b
 
 export CLICOLOR=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="code --wait"
+export VISUAL="code --wait"
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT=1
 
 # History
 HISTSIZE=10000
