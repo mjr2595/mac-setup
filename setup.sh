@@ -268,7 +268,8 @@ setup_dotfiles() {
     [ -L "$HOME/.config/starship.toml" ] && print_success "starship.toml symlink verified" || print_warning "starship.toml not symlinked"
     [ -L "$HOME/.config/ghostty/config" ] && print_success "ghostty config symlink verified" || print_warning "ghostty config not symlinked"
     [ -L "$HOME/.gitconfig" ] && print_success ".gitconfig symlink verified" || print_warning ".gitconfig not symlinked"
-    [ -L "$HOME/.config/opencode/config.json" ] && print_success "opencode config symlink verified" || print_warning "opencode config not symlinked"
+    [ -L "$HOME/.config/opencode/opencode.json" ] && print_success "opencode config symlink verified" || print_warning "opencode config not symlinked"
+    [ -L "$HOME/.config/opencode/cli.json" ] && print_success "opencode cli.json symlink verified" || print_warning "opencode cli.json not symlinked"
 }
 
 configure_git() {

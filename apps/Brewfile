@@ -18,8 +18,8 @@ brew "nvm"               # Node version manager
 brew "pnpm"              # Fast Node package manager
 
 # Networking & Utilities
-brew "mole"              # Port forwarding
-brew "opencode"          # AI coding agent
+brew "mole"                      # Port forwarding
+brew "anomalyco/tap/opencode-v2" # AI coding agent
 
 # ============================================
 # Development Tools (Casks)

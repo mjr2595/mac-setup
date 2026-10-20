@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # ============================================
 
 # Consolidated PATH
-export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$HOME/.opencode/bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/go/bin:$HOME/.bun/bin:/usr/local/opt/libpq/bin:$HOME/.sdkman/candidates/groovy/current/bin:$PATH:$HOME/.opencode/bin"
 
 export CLICOLOR=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1

@@ -3,10 +3,12 @@
   "formatter": true,
   "lsp": true,
   "mcp": {
-    "todoist": {
-      "type": "remote",
-      "url": "https://ai.todoist.net/mcp",
-      "oauth": {}
+    "servers": {
+      "todoist": {
+        "type": "remote",
+        "url": "https://ai.todoist.net/mcp",
+        "oauth": {}
+      }
     }
   }
 }
